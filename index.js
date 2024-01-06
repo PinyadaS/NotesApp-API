@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const db = require('./database/connection');
 
@@ -15,8 +16,9 @@ app.get('/door', (req,res) => {
 
 require('./models/user');
 
+app.use(bodyParser.json())
 app.use("/user", require('./routes/user_route'))
 
-app.listen(3001, () => {
+app.listen(3003, () => {
     console.log('Server started')
 });

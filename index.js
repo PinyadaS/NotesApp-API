@@ -18,6 +18,7 @@ require('./models/user');
 
 app.use(bodyParser.json())
 app.use("/user", require('./routes/user_route'))
+app.use('/note', require('./routes/note_route'))
 
 app.listen(3003, () => {
     console.log('Server started')

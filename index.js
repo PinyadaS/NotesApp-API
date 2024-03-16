@@ -15,11 +15,12 @@ app.get('/door', (req,res) => {
 }})();
 
 require('./models/user');
+require('./models/note');
 
 app.use(bodyParser.json())
 app.use("/user", require('./routes/user_route'))
 app.use('/note', require('./routes/note_route'))
 
-app.listen(3003, () => {
+app.listen(3001, () => {
     console.log('Server started')
 });
